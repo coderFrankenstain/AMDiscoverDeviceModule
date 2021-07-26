@@ -1,0 +1,705 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		046D046626A8101400D9E7C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D046526A8101400D9E7C9 /* AppDelegate.m */; };
+		046D046926A8101400D9E7C9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D046826A8101400D9E7C9 /* SceneDelegate.m */; };
+		046D046C26A8101400D9E7C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D046B26A8101400D9E7C9 /* ViewController.m */; };
+		046D046F26A8101400D9E7C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046D046D26A8101400D9E7C9 /* Main.storyboard */; };
+		046D047126A8101800D9E7C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046D047026A8101800D9E7C9 /* Assets.xcassets */; };
+		046D047426A8101800D9E7C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046D047226A8101800D9E7C9 /* LaunchScreen.storyboard */; };
+		046D047726A8101800D9E7C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D047626A8101800D9E7C9 /* main.m */; };
+		046D048126A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D048026A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.m */; };
+		046D048C26A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D048B26A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.m */; };
+		046D04B026A8144A00D9E7C9 /* AMRippleAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D04AF26A8144A00D9E7C9 /* AMRippleAnimationView.m */; };
+		04A9579E26A83CC8007AFC27 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9579D26A83CC8007AFC27 /* BViewController.m */; };
+		04C6D8FF26A9407C001559A1 /* AMConnectBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6D8FE26A9407C001559A1 /* AMConnectBubbleView.m */; };
+		04C6D90C26A96D65001559A1 /* AMDiscoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6D90B26A96D65001559A1 /* AMDiscoverView.m */; };
+		04F171F726AA9D0000E76315 /* UIFont+WordSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F171F626AA9D0000E76315 /* UIFont+WordSize.m */; };
+		4315A07553B3AC0746C919B3 /* Pods_AMDiscoverDeviceModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8D85DCF85746913AAA4B96 /* Pods_AMDiscoverDeviceModule.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		046D047D26A8101900D9E7C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 046D045926A8101400D9E7C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 046D046026A8101400D9E7C9;
+			remoteInfo = AMDiscoverDeviceModule;
+		};
+		046D048826A8101900D9E7C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 046D045926A8101400D9E7C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 046D046026A8101400D9E7C9;
+			remoteInfo = AMDiscoverDeviceModule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		046D046126A8101400D9E7C9 /* AMDiscoverDeviceModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMDiscoverDeviceModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		046D046426A8101400D9E7C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		046D046526A8101400D9E7C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		046D046726A8101400D9E7C9 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		046D046826A8101400D9E7C9 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		046D046A26A8101400D9E7C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		046D046B26A8101400D9E7C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		046D046E26A8101400D9E7C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		046D047026A8101800D9E7C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		046D047326A8101800D9E7C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		046D047526A8101800D9E7C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046D047626A8101800D9E7C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		046D047C26A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMDiscoverDeviceModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		046D048026A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMDiscoverDeviceModuleTests.m; sourceTree = "<group>"; };
+		046D048226A8101900D9E7C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046D048726A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMDiscoverDeviceModuleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		046D048B26A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMDiscoverDeviceModuleUITests.m; sourceTree = "<group>"; };
+		046D048D26A8101900D9E7C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046D04AE26A8144A00D9E7C9 /* AMRippleAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMRippleAnimationView.h; sourceTree = "<group>"; };
+		046D04AF26A8144A00D9E7C9 /* AMRippleAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMRippleAnimationView.m; sourceTree = "<group>"; };
+		04A288383EC223F20B4E58AF /* Pods-AMDiscoverDeviceModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMDiscoverDeviceModule.release.xcconfig"; path = "Target Support Files/Pods-AMDiscoverDeviceModule/Pods-AMDiscoverDeviceModule.release.xcconfig"; sourceTree = "<group>"; };
+		04A9579C26A83CC8007AFC27 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		04A9579D26A83CC8007AFC27 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
+		04C6D8FD26A9407C001559A1 /* AMConnectBubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMConnectBubbleView.h; sourceTree = "<group>"; };
+		04C6D8FE26A9407C001559A1 /* AMConnectBubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMConnectBubbleView.m; sourceTree = "<group>"; };
+		04C6D90326A949F7001559A1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = AMDiscoverDeviceModule/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		04C6D90A26A96D65001559A1 /* AMDiscoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMDiscoverView.h; sourceTree = "<group>"; };
+		04C6D90B26A96D65001559A1 /* AMDiscoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMDiscoverView.m; sourceTree = "<group>"; };
+		04F171F526AA9D0000E76315 /* UIFont+WordSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+WordSize.h"; sourceTree = "<group>"; };
+		04F171F626AA9D0000E76315 /* UIFont+WordSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+WordSize.m"; sourceTree = "<group>"; };
+		693ACA4B293A7137D82FD16B /* Pods-AMDiscoverDeviceModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMDiscoverDeviceModule.debug.xcconfig"; path = "Target Support Files/Pods-AMDiscoverDeviceModule/Pods-AMDiscoverDeviceModule.debug.xcconfig"; sourceTree = "<group>"; };
+		BA8D85DCF85746913AAA4B96 /* Pods_AMDiscoverDeviceModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMDiscoverDeviceModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		046D045E26A8101400D9E7C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4315A07553B3AC0746C919B3 /* Pods_AMDiscoverDeviceModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046D047926A8101900D9E7C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046D048426A8101900D9E7C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		046D045826A8101400D9E7C9 = {
+			isa = PBXGroup;
+			children = (
+				046D046326A8101400D9E7C9 /* AMDiscoverDeviceModule */,
+				046D047F26A8101900D9E7C9 /* AMDiscoverDeviceModuleTests */,
+				046D048A26A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests */,
+				046D046226A8101400D9E7C9 /* Products */,
+				7B56842D5C3CB12D035FA3CE /* Pods */,
+				425F6F672220045CDE48AD35 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		046D046226A8101400D9E7C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				046D046126A8101400D9E7C9 /* AMDiscoverDeviceModule.app */,
+				046D047C26A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.xctest */,
+				046D048726A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		046D046326A8101400D9E7C9 /* AMDiscoverDeviceModule */ = {
+			isa = PBXGroup;
+			children = (
+				046D04A426A8111100D9E7C9 /* AnimationView */,
+				046D046426A8101400D9E7C9 /* AppDelegate.h */,
+				046D046526A8101400D9E7C9 /* AppDelegate.m */,
+				046D046726A8101400D9E7C9 /* SceneDelegate.h */,
+				046D046826A8101400D9E7C9 /* SceneDelegate.m */,
+				046D046A26A8101400D9E7C9 /* ViewController.h */,
+				046D046B26A8101400D9E7C9 /* ViewController.m */,
+				046D046D26A8101400D9E7C9 /* Main.storyboard */,
+				046D047026A8101800D9E7C9 /* Assets.xcassets */,
+				046D047226A8101800D9E7C9 /* LaunchScreen.storyboard */,
+				046D047526A8101800D9E7C9 /* Info.plist */,
+				046D047626A8101800D9E7C9 /* main.m */,
+				04A9579C26A83CC8007AFC27 /* BViewController.h */,
+				04A9579D26A83CC8007AFC27 /* BViewController.m */,
+				04C6D90326A949F7001559A1 /* PrefixHeader.pch */,
+				04F171F526AA9D0000E76315 /* UIFont+WordSize.h */,
+				04F171F626AA9D0000E76315 /* UIFont+WordSize.m */,
+			);
+			path = AMDiscoverDeviceModule;
+			sourceTree = "<group>";
+		};
+		046D047F26A8101900D9E7C9 /* AMDiscoverDeviceModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				046D048026A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.m */,
+				046D048226A8101900D9E7C9 /* Info.plist */,
+			);
+			path = AMDiscoverDeviceModuleTests;
+			sourceTree = "<group>";
+		};
+		046D048A26A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				046D048B26A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.m */,
+				046D048D26A8101900D9E7C9 /* Info.plist */,
+			);
+			path = AMDiscoverDeviceModuleUITests;
+			sourceTree = "<group>";
+		};
+		046D04A426A8111100D9E7C9 /* AnimationView */ = {
+			isa = PBXGroup;
+			children = (
+				046D04AE26A8144A00D9E7C9 /* AMRippleAnimationView.h */,
+				046D04AF26A8144A00D9E7C9 /* AMRippleAnimationView.m */,
+				04C6D8FD26A9407C001559A1 /* AMConnectBubbleView.h */,
+				04C6D8FE26A9407C001559A1 /* AMConnectBubbleView.m */,
+				04C6D90A26A96D65001559A1 /* AMDiscoverView.h */,
+				04C6D90B26A96D65001559A1 /* AMDiscoverView.m */,
+			);
+			path = AnimationView;
+			sourceTree = "<group>";
+		};
+		425F6F672220045CDE48AD35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA8D85DCF85746913AAA4B96 /* Pods_AMDiscoverDeviceModule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B56842D5C3CB12D035FA3CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				693ACA4B293A7137D82FD16B /* Pods-AMDiscoverDeviceModule.debug.xcconfig */,
+				04A288383EC223F20B4E58AF /* Pods-AMDiscoverDeviceModule.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		046D046026A8101400D9E7C9 /* AMDiscoverDeviceModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 046D049026A8101900D9E7C9 /* Build configuration list for PBXNativeTarget "AMDiscoverDeviceModule" */;
+			buildPhases = (
+				B7A5DD83685697B8EF80DC71 /* [CP] Check Pods Manifest.lock */,
+				046D045D26A8101400D9E7C9 /* Sources */,
+				046D045E26A8101400D9E7C9 /* Frameworks */,
+				046D045F26A8101400D9E7C9 /* Resources */,
+				5A08875237388202C8BA0AA0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AMDiscoverDeviceModule;
+			productName = AMDiscoverDeviceModule;
+			productReference = 046D046126A8101400D9E7C9 /* AMDiscoverDeviceModule.app */;
+			productType = "com.apple.product-type.application";
+		};
+		046D047B26A8101900D9E7C9 /* AMDiscoverDeviceModuleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 046D049326A8101900D9E7C9 /* Build configuration list for PBXNativeTarget "AMDiscoverDeviceModuleTests" */;
+			buildPhases = (
+				046D047826A8101900D9E7C9 /* Sources */,
+				046D047926A8101900D9E7C9 /* Frameworks */,
+				046D047A26A8101900D9E7C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				046D047E26A8101900D9E7C9 /* PBXTargetDependency */,
+			);
+			name = AMDiscoverDeviceModuleTests;
+			productName = AMDiscoverDeviceModuleTests;
+			productReference = 046D047C26A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		046D048626A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 046D049626A8101900D9E7C9 /* Build configuration list for PBXNativeTarget "AMDiscoverDeviceModuleUITests" */;
+			buildPhases = (
+				046D048326A8101900D9E7C9 /* Sources */,
+				046D048426A8101900D9E7C9 /* Frameworks */,
+				046D048526A8101900D9E7C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				046D048926A8101900D9E7C9 /* PBXTargetDependency */,
+			);
+			name = AMDiscoverDeviceModuleUITests;
+			productName = AMDiscoverDeviceModuleUITests;
+			productReference = 046D048726A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		046D045926A8101400D9E7C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					046D046026A8101400D9E7C9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					046D047B26A8101900D9E7C9 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 046D046026A8101400D9E7C9;
+					};
+					046D048626A8101900D9E7C9 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 046D046026A8101400D9E7C9;
+					};
+				};
+			};
+			buildConfigurationList = 046D045C26A8101400D9E7C9 /* Build configuration list for PBXProject "AMDiscoverDeviceModule" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 046D045826A8101400D9E7C9;
+			productRefGroup = 046D046226A8101400D9E7C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				046D046026A8101400D9E7C9 /* AMDiscoverDeviceModule */,
+				046D047B26A8101900D9E7C9 /* AMDiscoverDeviceModuleTests */,
+				046D048626A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		046D045F26A8101400D9E7C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046D047426A8101800D9E7C9 /* LaunchScreen.storyboard in Resources */,
+				046D047126A8101800D9E7C9 /* Assets.xcassets in Resources */,
+				046D046F26A8101400D9E7C9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046D047A26A8101900D9E7C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046D048526A8101900D9E7C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A08875237388202C8BA0AA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AMDiscoverDeviceModule/Pods-AMDiscoverDeviceModule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AMDiscoverDeviceModule/Pods-AMDiscoverDeviceModule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AMDiscoverDeviceModule/Pods-AMDiscoverDeviceModule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7A5DD83685697B8EF80DC71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AMDiscoverDeviceModule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		046D045D26A8101400D9E7C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046D046C26A8101400D9E7C9 /* ViewController.m in Sources */,
+				04A9579E26A83CC8007AFC27 /* BViewController.m in Sources */,
+				04F171F726AA9D0000E76315 /* UIFont+WordSize.m in Sources */,
+				046D046626A8101400D9E7C9 /* AppDelegate.m in Sources */,
+				04C6D90C26A96D65001559A1 /* AMDiscoverView.m in Sources */,
+				046D047726A8101800D9E7C9 /* main.m in Sources */,
+				046D04B026A8144A00D9E7C9 /* AMRippleAnimationView.m in Sources */,
+				046D046926A8101400D9E7C9 /* SceneDelegate.m in Sources */,
+				04C6D8FF26A9407C001559A1 /* AMConnectBubbleView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046D047826A8101900D9E7C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046D048126A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046D048326A8101900D9E7C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046D048C26A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		046D047E26A8101900D9E7C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 046D046026A8101400D9E7C9 /* AMDiscoverDeviceModule */;
+			targetProxy = 046D047D26A8101900D9E7C9 /* PBXContainerItemProxy */;
+		};
+		046D048926A8101900D9E7C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 046D046026A8101400D9E7C9 /* AMDiscoverDeviceModule */;
+			targetProxy = 046D048826A8101900D9E7C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		046D046D26A8101400D9E7C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				046D046E26A8101400D9E7C9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		046D047226A8101800D9E7C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				046D047326A8101800D9E7C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		046D048E26A8101900D9E7C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		046D048F26A8101900D9E7C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		046D049126A8101900D9E7C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 693ACA4B293A7137D82FD16B /* Pods-AMDiscoverDeviceModule.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 292V2CN6SF;
+				GCC_PREFIX_HEADER = AMDiscoverDeviceModule/PrefixHeader.pch;
+				INFOPLIST_FILE = AMDiscoverDeviceModule/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aomei.AMDiscoverDeviceModule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		046D049226A8101900D9E7C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04A288383EC223F20B4E58AF /* Pods-AMDiscoverDeviceModule.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 292V2CN6SF;
+				GCC_PREFIX_HEADER = AMDiscoverDeviceModule/PrefixHeader.pch;
+				INFOPLIST_FILE = AMDiscoverDeviceModule/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aomei.AMDiscoverDeviceModule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		046D049426A8101900D9E7C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 292V2CN6SF;
+				INFOPLIST_FILE = AMDiscoverDeviceModuleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aomei.AMDiscoverDeviceModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AMDiscoverDeviceModule.app/AMDiscoverDeviceModule";
+			};
+			name = Debug;
+		};
+		046D049526A8101900D9E7C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 292V2CN6SF;
+				INFOPLIST_FILE = AMDiscoverDeviceModuleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aomei.AMDiscoverDeviceModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AMDiscoverDeviceModule.app/AMDiscoverDeviceModule";
+			};
+			name = Release;
+		};
+		046D049726A8101900D9E7C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 292V2CN6SF;
+				INFOPLIST_FILE = AMDiscoverDeviceModuleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aomei.AMDiscoverDeviceModuleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AMDiscoverDeviceModule;
+			};
+			name = Debug;
+		};
+		046D049826A8101900D9E7C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 292V2CN6SF;
+				INFOPLIST_FILE = AMDiscoverDeviceModuleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aomei.AMDiscoverDeviceModuleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AMDiscoverDeviceModule;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		046D045C26A8101400D9E7C9 /* Build configuration list for PBXProject "AMDiscoverDeviceModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046D048E26A8101900D9E7C9 /* Debug */,
+				046D048F26A8101900D9E7C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		046D049026A8101900D9E7C9 /* Build configuration list for PBXNativeTarget "AMDiscoverDeviceModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046D049126A8101900D9E7C9 /* Debug */,
+				046D049226A8101900D9E7C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		046D049326A8101900D9E7C9 /* Build configuration list for PBXNativeTarget "AMDiscoverDeviceModuleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046D049426A8101900D9E7C9 /* Debug */,
+				046D049526A8101900D9E7C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		046D049626A8101900D9E7C9 /* Build configuration list for PBXNativeTarget "AMDiscoverDeviceModuleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046D049726A8101900D9E7C9 /* Debug */,
+				046D049826A8101900D9E7C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 046D045926A8101400D9E7C9 /* Project object */;
+}
