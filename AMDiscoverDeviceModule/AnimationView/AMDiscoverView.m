@@ -8,95 +8,105 @@
 #import "AMDiscoverView.h"
 #import "AMRippleAnimationView.h"
 #import "AMConnectBubbleView.h"
-#define gap [AMConnectBubbleView bubbleWidth]
+#define gap 10
+
+#define AMFlexWidth [UIScreen mainScreen].bounds.size.width / 8
+#define BubleWidth 3*AMFlexWidth
+#define BubleHeigth AMFlexWidth
 @implementation AMDiscoverView
 
 - (instancetype) init {
     if (self = [super init]) {
-       
-        
         
     }
     return self;
 }
 
-- (instancetype) initWithFrame:(CGRect)frame {
+- (instancetype) initWithFrame:(CGRect)frame index:(NSInteger) index{
     if (self = [super initWithFrame:frame]) {
-      
+        
+        AMRippleAnimationView* animationView = [[AMRippleAnimationView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width/1.6,  frame.size.width/1.6)];
+        animationView.center = self.center;
+        [self addSubview:animationView];
+            
+        //中间ICON
+        UIView* iconBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, animationView.frame.size.width*0.5, animationView.frame.size.width*0.5)];
+        iconBgView.backgroundColor = ColorWithAlpha(83, 150, 230, 1);
+        iconBgView.center = self.center;
+        iconBgView.layer.cornerRadius = 0.5*iconBgView.frame.size.width;
+        iconBgView.layer.masksToBounds = YES;
+        [self addSubview:iconBgView];
+        
+        UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, iconBgView.frame.size.width*0.4, iconBgView.frame.size.height*0.4)];
+        imageView.center = self.center;
+        [imageView setImage:[UIImage imageNamed:@"Apple"]];
+        [self addSubview:imageView];
+        
+        //基本半径
+        CGFloat baseR = iconBgView.width*0.5 + 0.5*BubleHeigth+3*gap;
+        NSInteger count = (NSInteger)index;
+        
+        
+        for (int i = 0; i < count;i++) {
+            //旋转角度
+            CGFloat angle = 30 + i*(360*1.0/count*1.0);
+
+            CGPoint bublePoint = [self randomRadius:iconBgView.center andWithAngle:angle andWithRadius:baseR];
+
+            AMConnectBubbleView* discover = [[AMConnectBubbleView alloc] initWithIcon:@"" content:[NSString stringWithFormat:@"index %d",i] andFrame:CGRectMake(0, 0, BubleWidth, BubleHeigth)];
+            [discover setCenter:bublePoint];
+            [self addSubview:discover];
+        }
+        
     }
     return self;
 }
 
-- (void) setupViews {
-    //动画背景
-    AMRippleAnimationView* animationView = [[AMRippleAnimationView alloc] init];
-    [self addSubview:animationView];
-        
-    //中间ICON
-    UIView* iconBgView = [[UIView alloc] init];
-    iconBgView.backgroundColor = ColorWithAlpha(83, 150, 230, 1);
-    [self addSubview:iconBgView];
+- (BOOL) isInRect:(CGPoint) point{
     
+    point.x = point.x - 0.5*BubleWidth;
+    point.y = point.y - 0.5*BubleHeigth;
+    
+    if (point.x < 0 || point.x + BubleWidth > self.width || point.y < 0 || point.y+BubleHeigth > self.height) {
+        
+        return NO;
+    }
+    else {
+        return YES;
+    }
+}
 
-    UIImageView* imageView = [[UIImageView alloc] init];
-    [imageView setImage:[UIImage imageNamed:@"Apple"]];
-    [iconBgView addSubview:imageView];
-    
-    
-    [animationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(animationView.superview);
-        make.size.mas_equalTo(animationView.superview).dividedBy(1.6);
-    }];
-    
-    
-    [iconBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(animationView).multipliedBy(0.5);
-        make.center.mas_equalTo(iconBgView.superview);
-    }];
-    
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(imageView.superview);
-        make.size.mas_equalTo(imageView.superview).multipliedBy(0.4);
-    }];
-    
-    
-    NSArray* arrays = @[@"coderjun'iphone",@"aomei",@"iphone4",@"Macmini",@"macbook",@"retina"];
-    
-    for(int i =0 ; i < 6 ;i++){
-        AMConnectBubbleView* bubleView = [[AMConnectBubbleView alloc] initWithIcon:@"coderjun" content:arrays[i]];
-        [self addSubview:bubleView];
-        
-        CGFloat topGap = (gap)*(i);
-        CGFloat hGap = 10;
-        
-                                                   
-        
-        if ((i ) % 2 == 0) {
-            //下标为偶数
-            NSLog(@"");
-            [bubleView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(bubleView.superview).offset(hGap);
-                make.top.mas_equalTo(topGap);
-                make.right.mas_lessThanOrEqualTo(iconBgView.mas_left).offset(0);
-            }];
 
-        }
-        else {
-            //下标为奇数
-            [bubleView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_greaterThanOrEqualTo(iconBgView.mas_right).offset(0);
-                make.top.mas_equalTo(topGap);
-                make.right.mas_equalTo(bubleView.superview).offset(-hGap);
-            }];
-        }
+- (CGPoint)calcCircleCoordinateWithCenter:(CGPoint)center  andWithAngle:(CGFloat) angle andWithRadius:(CGFloat)radius{
+    
+    CGFloat x2 = radius * cosf(angle * M_PI/180);
+
+    CGFloat y2 = radius * sinf(angle * M_PI/180);
         
+    return CGPointMake(center.x+x2, center.y + y2);
+
+    
+}
+
+- (CGPoint) randomRadius:(CGPoint)center  andWithAngle:(CGFloat) angle andWithRadius:(CGFloat)radius {
+    CGFloat baseR = radius;
+    //半径区间变化
+    radius = baseR+arc4random()%(6*gap);
+    
+    NSLog(@"随机半径 %lf",radius);
+
+    
+    CGPoint point = [self calcCircleCoordinateWithCenter:center andWithAngle:angle andWithRadius:radius];
+    
+    if (![self isInRect:point]) {
+        radius = baseR;
+        point = [self calcCircleCoordinateWithCenter:center andWithAngle:angle andWithRadius:radius];
     }
     
-    [self layoutIfNeeded];
-    iconBgView.layer.cornerRadius = 0.5*iconBgView.frame.size.width;
-    iconBgView.layer.masksToBounds = YES;
-
+    return point;
 }
+
+
 
 
 @end

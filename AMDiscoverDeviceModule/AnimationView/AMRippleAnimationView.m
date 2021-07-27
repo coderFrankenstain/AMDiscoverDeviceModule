@@ -135,19 +135,6 @@ static double const animationDuration = 3;
     return backgroundColorAnimation;
 }
 
-//- (CAKeyframeAnimation*) borderColorAnimation {
-//    CAKeyframeAnimation *borderColorAnimation = [CAKeyframeAnimation animation];
-//
-//    borderColorAnimation.keyPath = @"borderColor";
-//    borderColorAnimation.values = @[(__bridge id)ColorWithAlpha(255, 216, 87, 0.5).CGColor,
-//                                        (__bridge id)ColorWithAlpha(255, 231, 152, 0.5).CGColor,
-//                                        (__bridge id)ColorWithAlpha(255, 241, 197, 0.5).CGColor,
-//                                        (__bridge id)ColorWithAlpha(255, 241, 197, 0).CGColor];
-//    borderColorAnimation.keyTimes = @[@0.3,@0.6,@0.9,@1];
-//
-//    return borderColorAnimation;
-//}
-
 
 
 /*

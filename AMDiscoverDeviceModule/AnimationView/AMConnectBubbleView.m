@@ -8,34 +8,38 @@
 #import "AMConnectBubbleView.h"
 #import "UIFont+WordSize.h"
 #define gap 5
-#define AMMaxWidth [UIScreen mainScreen].bounds.size.width / 8
-#define fontSize 13
+
+
 @implementation AMConnectBubbleView
 
-+ (CGFloat) bubbleWidth {
-    return AMMaxWidth;
-}
 
-- (instancetype) initWithIcon:(NSString*) iconName content:(NSString*) content {
-    if (self = [super init]) {
+- (instancetype) initWithIcon:(NSString*) iconName content:(NSString*) content andFrame:(CGRect) frame {
+    if (self = [super initWithFrame:frame]) {
         
         //字体大小
-        NSLog(@"max width %lf",[UIFont dynamicWordSize]);
+//        NSLog(@"max width %lf",[UIFont dynamicWordSize]);
         //设置默认高度
+//        CGFloat width = frame.size.width;
+        CGFloat height = frame.size.height;
+        CGFloat wordWidth = 2*height-2*gap;
+        CGFloat iconWidth = height;
     
-        UIView* iconView = [[UIView alloc] init];
-        iconView.layer.cornerRadius = 0.5*AMMaxWidth;
+        UIView* iconView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, iconWidth, iconWidth)];
+        iconView.layer.cornerRadius = 0.5*iconWidth;
         iconView.layer.masksToBounds = YES;
         iconView.backgroundColor = [UIColor greenColor];
         
-        UIView* textBgView = [[UIView alloc] init];
+        UIView* textBgView = [[UIView alloc] initWithFrame:CGRectMake(0.5*iconWidth, 0.2*iconWidth, 2.5*iconWidth, 0.6*iconWidth)];
         textBgView.layer.cornerRadius = 5;
         textBgView.layer.masksToBounds = YES;
         textBgView.backgroundColor = [UIColor blueColor];
         
-        UILabel* contentLabel = [[UILabel alloc] init];
+        //计算文字大小
+        CGSize titleSize = [content sizeWithAttributes:@{NSFontAttributeName: [UIFont smallWordSize]}];
+        UILabel* contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.5*iconWidth+gap, 0.5*( textBgView.frame.size.height-titleSize.height),wordWidth, titleSize.height)];
         contentLabel.backgroundColor = [UIColor yellowColor];
         contentLabel.text = content;
+        contentLabel.textAlignment = NSTextAlignmentCenter;
         contentLabel.font = [UIFont smallWordSize];
         
         [self addSubview:textBgView];
@@ -43,39 +47,12 @@
         [textBgView addSubview:contentLabel];
 
         
-        [iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.height.mas_equalTo(AMMaxWidth);
-            make.left.mas_equalTo(0);
-        }];
-        
-        [textBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(iconView.mas_centerY);
-            make.left.mas_equalTo(iconView.mas_left).offset(AMMaxWidth*0.5);
-            make.right.mas_equalTo(self.mas_right);
-            make.width.mas_lessThanOrEqualTo(AMMaxWidth*3);
-        }];
-        
-        [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(textBgView.mas_left).offset(AMMaxWidth*0.5+gap);
-            make.right.mas_equalTo(textBgView.mas_right).offset(-gap);
-            make.top.mas_equalTo(textBgView.mas_top).offset(gap);
-            make.bottom.mas_equalTo(textBgView.mas_bottom).offset(-gap);
-        }];
-        
-    
     }
     return self;
 }
 
 
 
-- (instancetype) initWithFrame:(CGRect)frame {
-    
-    if (self = [super initWithFrame:frame]) {
-
-    }
-    return self;
-}
 
 
 

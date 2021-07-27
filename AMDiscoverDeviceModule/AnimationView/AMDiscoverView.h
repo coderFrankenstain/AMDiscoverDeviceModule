@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AMDiscoverView : UIView
-- (void) setupViews;
+- (instancetype) initWithFrame:(CGRect)frame index:(NSInteger) index;
 @end
 
 NS_ASSUME_NONNULL_END

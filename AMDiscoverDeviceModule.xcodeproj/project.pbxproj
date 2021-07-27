@@ -20,6 +20,7 @@
 		04A9579E26A83CC8007AFC27 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9579D26A83CC8007AFC27 /* BViewController.m */; };
 		04C6D8FF26A9407C001559A1 /* AMConnectBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6D8FE26A9407C001559A1 /* AMConnectBubbleView.m */; };
 		04C6D90C26A96D65001559A1 /* AMDiscoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6D90B26A96D65001559A1 /* AMDiscoverView.m */; };
+		04E63D6C26AFD37F00706377 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E63D6B26AFD37F00706377 /* UIView+Extension.m */; };
 		04F171F726AA9D0000E76315 /* UIFont+WordSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F171F626AA9D0000E76315 /* UIFont+WordSize.m */; };
 		4315A07553B3AC0746C919B3 /* Pods_AMDiscoverDeviceModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8D85DCF85746913AAA4B96 /* Pods_AMDiscoverDeviceModule.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,8 @@
 		04C6D90326A949F7001559A1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = AMDiscoverDeviceModule/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		04C6D90A26A96D65001559A1 /* AMDiscoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMDiscoverView.h; sourceTree = "<group>"; };
 		04C6D90B26A96D65001559A1 /* AMDiscoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMDiscoverView.m; sourceTree = "<group>"; };
+		04E63D6A26AFD37F00706377 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		04E63D6B26AFD37F00706377 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		04F171F526AA9D0000E76315 /* UIFont+WordSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+WordSize.h"; sourceTree = "<group>"; };
 		04F171F626AA9D0000E76315 /* UIFont+WordSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+WordSize.m"; sourceTree = "<group>"; };
 		693ACA4B293A7137D82FD16B /* Pods-AMDiscoverDeviceModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMDiscoverDeviceModule.debug.xcconfig"; path = "Target Support Files/Pods-AMDiscoverDeviceModule/Pods-AMDiscoverDeviceModule.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 		046D046326A8101400D9E7C9 /* AMDiscoverDeviceModule */ = {
 			isa = PBXGroup;
 			children = (
+				04E63D6A26AFD37F00706377 /* UIView+Extension.h */,
+				04E63D6B26AFD37F00706377 /* UIView+Extension.m */,
 				046D04A426A8111100D9E7C9 /* AnimationView */,
 				046D046426A8101400D9E7C9 /* AppDelegate.h */,
 				046D046526A8101400D9E7C9 /* AppDelegate.m */,
@@ -369,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E63D6C26AFD37F00706377 /* UIView+Extension.m in Sources */,
 				046D046C26A8101400D9E7C9 /* ViewController.m in Sources */,
 				04A9579E26A83CC8007AFC27 /* BViewController.m in Sources */,
 				04F171F726AA9D0000E76315 /* UIFont+WordSize.m in Sources */,

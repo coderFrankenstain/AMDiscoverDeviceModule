@@ -10,8 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AMConnectBubbleView : UIView
-- (instancetype) initWithIcon:(NSString*) iconName content:(NSString*) content;
-+ (CGFloat) bubbleWidth;
+- (instancetype) initWithIcon:(NSString*) iconName content:(NSString*) content andFrame:(CGRect) frame;
+//+ (CGFloat) bubbleWidth;
+//+ (CGFloat) bubbleHeight;
 @end
 
 NS_ASSUME_NONNULL_END
