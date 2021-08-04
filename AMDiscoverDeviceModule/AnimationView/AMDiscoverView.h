@@ -10,7 +10,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AMDiscoverView : UIView
-- (instancetype) initWithFrame:(CGRect)frame index:(NSInteger) index;
+- (instancetype) initWithFrame:(CGRect)frame;
+
+@property(strong,nonatomic) NSArray* dataArray;
+@property(assign,nonatomic) NSInteger count;
+
 @end
 
 NS_ASSUME_NONNULL_END

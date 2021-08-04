@@ -7,17 +7,21 @@
 //
 
 #import "AMRippleAnimationView.h"
-// 设置静态常量 pulsingCount ，表示 Layer 的数量
-static NSInteger const pulsingCount = 3;
 
-// 设置静态常量 animationDuration ，表示动画时间
+#define WJRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+// 表示涟漪数量(原图层加复制图层)
+static NSInteger const rippleCount = 3;
+
+//涟漪间隔时间
+static double const rippleDuration = 1;
+
+// 表示动画时间持续时间
 static double const animationDuration = 3;
-
 
 @interface AMRippleAnimationView()
 
 @end
-
 
 @implementation AMRippleAnimationView
 
@@ -26,26 +30,14 @@ static double const animationDuration = 3;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        _multiple = 1.6;
+        self.scaleFactor = 1.6;
+        
+        [self.layer addSublayer:[self replicatorLayer:frame]];
+        [self.layer addSublayer:[self iconLayer:CGRectMake(0.25*frame.size.width+frame.origin.x, 0.25*frame.size.height+frame.origin.y, frame.size.width*0.5, frame.size.height*0.5)]];
     }
     return self;
 }
 
-- (void)drawRect:(CGRect)rect {
-  //判断layer是否等于0 如果等于0则表示 此时没有图层，防止重复绘制
-    if (self.layer.sublayers.count == 0) {
-        CALayer *animationLayer = [CALayer layer];
-        for(int i = 0; i < pulsingCount; i++){
-            CAAnimationGroup* animationGroup = [self animationGroupAnimations:[self animationArray] index:i];
-            CALayer* pulsingLayer = [self pulsingLayer:rect animation:animationGroup];
-            [animationLayer addSublayer:pulsingLayer];
-        }
-        
-        [self.layer addSublayer:animationLayer];
-//        [self.layer addSublayer:[self iconLayer:CGRectMake(0.25*rect.size.width+rect.origin.x, 0.25*rect.size.height+rect.origin.y, rect.size.width*0.5, rect.size.height*0.5)]];
-    }
-    
-}
 
 #pragma iconLayer
 - (CALayer*) iconLayer:(CGRect) rect{
@@ -64,64 +56,43 @@ static double const animationDuration = 3;
     return iconLayer;
 }
 
-#pragma BasicAnimation
-
-- (CALayer *)pulsingLayer:(CGRect)rect animation:(CAAnimationGroup *)animationGroup {
+//复制图层
+- (CAReplicatorLayer*) replicatorLayer:(CGRect) rect {
+    CAReplicatorLayer* replicatorLayer = [[CAReplicatorLayer alloc] init];
+    replicatorLayer.instanceCount = rippleCount;
+    replicatorLayer.instanceDelay = rippleDuration;
     
-    CALayer* pulsingLayer = [CALayer layer];
-    
-    //取消边框
-//    pulsingLayer.borderWidth = 0.5;
-    pulsingLayer.borderColor = ColorWithAlpha(255, 216, 87, 0.5).CGColor;
-    pulsingLayer.frame = CGRectMake(0, 0, rect.size.width, rect.size.height);
-    pulsingLayer.cornerRadius = rect.size.height / 2;
-    
-    [pulsingLayer addAnimation:animationGroup forKey:@"plulsing"];
-    
-    return pulsingLayer;
+    [replicatorLayer addSublayer:[self rippleBaseAnimationLayer:rect]];
+    return replicatorLayer;
 }
 
-
-- (CAAnimationGroup*) animationGroupAnimations:(NSArray*) array index:(int)index{
+- (CALayer *) rippleBaseAnimationLayer:(CGRect) rect {
     
-    CAAnimationGroup* animationGroup = [CAAnimationGroup animation];
+    CALayer* baseLayer = [CALayer layer];
     
-    animationGroup.beginTime = CACurrentMediaTime() + (double)(index * animationDuration) / (double)pulsingCount;
-    animationGroup.duration = 3;
-    animationGroup.repeatCount = HUGE;
-    animationGroup.animations = array;
-    animationGroup.removedOnCompletion = NO;
+    baseLayer.frame = CGRectMake(0, 0, rect.size.width, rect.size.height);
+    baseLayer.cornerRadius = rect.size.height / 2;
     
-    animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
-
-    return animationGroup;
+    [baseLayer addAnimation:[self rippleAnimation] forKey:@"rippleAnimationGroup"];
+    
+    return baseLayer;
 }
 
-- (NSArray*) animationArray {
-    
-    NSArray *animationArray = nil;
-    
-    CABasicAnimation* scaleAnimation = [self scaleAnimation];
-    CAKeyframeAnimation* backgroudColorAnimation = [self backgroudColorAnimation];
-//    CAKeyframeAnimation* borderColorAnimation = [self borderColorAnimation];
-    animationArray = @[scaleAnimation,backgroudColorAnimation];
-    
-    return animationArray;
-}
-
-
-- (CABasicAnimation*) scaleAnimation {
+//缩放动画
+-(CABasicAnimation*) scaleAnimation{
     
     CABasicAnimation* scaleAnimation  = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     
     scaleAnimation.fromValue = @(0.1);
-    scaleAnimation.toValue = @(_multiple);
+    scaleAnimation.toValue = @(self.scaleFactor);
     
     return scaleAnimation;
+    
 }
 
-
+//背景颜色变化
 - (CAKeyframeAnimation*) backgroudColorAnimation {
+    
     CAKeyframeAnimation *backgroundColorAnimation = [CAKeyframeAnimation animation];
 
     backgroundColorAnimation.keyPath = @"backgroundColor";
@@ -135,14 +106,19 @@ static double const animationDuration = 3;
     return backgroundColorAnimation;
 }
 
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+//涟漪组合动画
+- (CAAnimationGroup*) rippleAnimation{
+    
+    CAAnimationGroup* animationGroup = [CAAnimationGroup animation];
+    
+    animationGroup.duration = animationDuration;
+    animationGroup.repeatCount = MAXFLOAT;
+    animationGroup.animations = @[[self scaleAnimation],[self backgroudColorAnimation]];
+    animationGroup.removedOnCompletion = NO;
+    animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+    
+    return animationGroup;
 }
-*/
+
 
 @end

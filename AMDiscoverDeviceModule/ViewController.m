@@ -11,6 +11,7 @@
 #import "AMConnectBubbleView.h"
 #import "AMDiscoverView.h"
 
+
 @interface ViewController ()
 @property(strong,nonatomic) AMDiscoverView* dView;
 @end
@@ -18,11 +19,13 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
+//    [self animationView];
+//    [self rippleView];
+    [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self animationView];
-    [super viewDidLoad];
-//    [self customeView];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = ColorWithAlpha(241, 241, 241, 1);
 }
 
 
@@ -86,10 +89,21 @@
 }
 
 - (void) dViewWithTag:(NSInteger) tag{
-    AMDiscoverView* discoverView = [[AMDiscoverView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width-20, kScreen_Width-20) index:tag];
+    AMDiscoverView* discoverView = [[AMDiscoverView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width-20, kScreen_Width-20)];
     discoverView.center = self.view.center;
     self.dView = discoverView;
     [self.view addSubview:discoverView];
+    
+    [discoverView setCount:tag];
 }
+
+- (void) rippleView {
+    AMRippleAnimationView* rippleView = [[AMRippleAnimationView alloc] initWithFrame:CGRectMake(0, 0, (kScreen_Width-20)/1.6, (kScreen_Width-20)/1.6)];
+    rippleView.center = self.view.center;
+    [self.view addSubview:rippleView];
+}
+
+
+
 
 @end
