@@ -8,10 +8,14 @@
 #import "AMDiscoverView.h"
 #import "AMRippleAnimationView.h"
 #import "AMConnectBubbleView.h"
+#import "AMBubbleModel.h"
 #define gap 10
 
+//根据当前屏幕宽度计算泡泡视图的大小
 #define AMFlexWidth [UIScreen mainScreen].bounds.size.width / 8
+//泡泡视图的宽度
 #define BubleWidth 3*AMFlexWidth
+//泡泡视图的高度
 #define BubleHeigth AMFlexWidth
 
 @interface AMDiscoverView()
@@ -19,13 +23,6 @@
 @end
 
 @implementation AMDiscoverView
-
-- (instancetype) init {
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
 
 - (instancetype) initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -40,9 +37,9 @@
         iconView.center = self.center;
         iconView.layer.cornerRadius = 0.5*iconView.frame.size.width;
         iconView.layer.masksToBounds = YES;
-        self.iconView = iconView;
         [self addSubview:iconView];
-        
+        self.iconView = iconView;
+
         UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, iconView.frame.size.width*0.4, iconView.frame.size.height*0.4)];
         imageView.center = self.center;
         [imageView setImage:[UIImage imageNamed:@"Apple"]];
@@ -51,45 +48,67 @@
     return self;
 }
 
-
-- (void) setDataArray:(NSArray *)dataArray {
+- (void)setModels:(NSArray *)models{
+    _models = models;
+    //设置基本半径
+    CGFloat baseR = self.iconView.frame.size.width*0.5 + 0.5*BubleHeigth+3*gap;
+    //随机起始角度
+    CGFloat startAngle = arc4random() % 360;
     
-    _dataArray = dataArray;
-    //基本半径
-    CGFloat baseR = self.iconView.frame.size.width*0.5 + 0.5*BubleHeigth+3*gap;
-    //随机角度
-    CGFloat startAngle = arc4random() % 360;
-
-    for (int i = 0; i < dataArray.count;i++) {
-        //旋转角度
-        CGFloat angle = startAngle + i*(360*1.0/dataArray.count*1.0);
+    for(int i = 0;i < models.count;i++){
+        
+        AMBubbleModel* model = [models objectAtIndex:i];
+        
+        //计算当前泡泡视图的旋转的角度
+        CGFloat angle = startAngle + i*(360.0/models.count);
+        //计算泡泡视图的中心点
         CGPoint bublePoint = [self randomRadius:self.iconView.center andWithAngle:angle andWithRadius:baseR];
-
-        AMConnectBubbleView* discover = [[AMConnectBubbleView alloc] initWithIcon:@"" content:[NSString stringWithFormat:@"index %d",i] andFrame:CGRectMake(0, 0, BubleWidth, BubleHeigth)];
-        [discover setCenter:bublePoint];
-        [self addSubview:discover];
-    }
-}
-
--(void)setCount:(NSInteger)count {
-    //基本半径
-    CGFloat baseR = self.iconView.frame.size.width*0.5 + 0.5*BubleHeigth+3*gap;
-    //随机角度
-    CGFloat startAngle = arc4random() % 360;
-
-    for (int i = 0; i < count;i++) {
-        //旋转角度
-        CGFloat angle = startAngle + i*(360*1.0/count*1.0);
-        CGPoint bublePoint = [self randomRadius:self.iconView.center andWithAngle:angle andWithRadius:baseR];
-
-        AMConnectBubbleView* discover = [[AMConnectBubbleView alloc] initWithIcon:@"" content:[NSString stringWithFormat:@"index %d",i] andFrame:CGRectMake(0, 0, BubleWidth, BubleHeigth)];
+        //添加一个泡泡视图
+        AMConnectBubbleView* discover = [[AMConnectBubbleView alloc] initWithIcon:model.icon content:model.title andFrame:CGRectMake(0, 0, BubleWidth, BubleHeigth)];
         [discover setCenter:bublePoint];
         [self addSubview:discover];
     }
     
 }
 
+//- (void) setDataArray:(NSArray *)dataArray {
+//
+//    _dataArray = dataArray;
+//    //基本半径
+//    CGFloat baseR = self.iconView.frame.size.width*0.5 + 0.5*BubleHeigth+3*gap;
+//    //随机起始角度
+//    CGFloat startAngle = arc4random() % 360;
+//
+//    for (int i = 0; i < dataArray.count;i++) {
+//        //旋转角度
+//        CGFloat angle = startAngle + i*(360*1.0/dataArray.count*1.0);
+//        CGPoint bublePoint = [self randomRadius:self.iconView.center andWithAngle:angle andWithRadius:baseR];
+//
+//        AMConnectBubbleView* discover = [[AMConnectBubbleView alloc] initWithIcon:@"" content:[NSString stringWithFormat:@"index %d",i] andFrame:CGRectMake(0, 0, BubleWidth, BubleHeigth)];
+//        [discover setCenter:bublePoint];
+//        [self addSubview:discover];
+//    }
+//}
+//
+//-(void)setCount:(NSInteger)count {
+//    //基本半径
+//    CGFloat baseR = self.iconView.frame.size.width*0.5 + 0.5*BubleHeigth+3*gap;
+//    //随机角度
+//    CGFloat startAngle = arc4random() % 360;
+//
+//    for (int i = 0; i < count;i++) {
+//        //旋转角度
+//        CGFloat angle = startAngle + i*(360*1.0/count*1.0);
+//        CGPoint bublePoint = [self randomRadius:self.iconView.center andWithAngle:angle andWithRadius:baseR];
+//
+//        AMConnectBubbleView* discover = [[AMConnectBubbleView alloc] initWithIcon:@"" content:[NSString stringWithFormat:@"index %d",i] andFrame:CGRectMake(0, 0, BubleWidth, BubleHeigth)];
+//        [discover setCenter:bublePoint];
+//        [self addSubview:discover];
+//    }
+//
+//}
 
+//视图是否超过DiscoverView
 - (BOOL) isInRect:(CGPoint) point{
     
     point.x = point.x - 0.5*BubleWidth;
@@ -104,7 +123,7 @@
     }
 }
 
-
+//根据中心点，角度，半径计算出目标中心点
 - (CGPoint)calcCircleCoordinateWithCenter:(CGPoint)center  andWithAngle:(CGFloat) angle andWithRadius:(CGFloat)radius{
     
     CGFloat x2 = radius * cosf(angle * M_PI/180);
@@ -113,9 +132,9 @@
         
     return CGPointMake(center.x+x2, center.y + y2);
 
-    
 }
 
+//根据基本半径生成随机半径，并且判断生成的新半径是否在矩形范围内
 - (CGPoint) randomRadius:(CGPoint)center  andWithAngle:(CGFloat) angle andWithRadius:(CGFloat)radius {
     CGFloat baseR = radius;
     //随机半径

@@ -61,17 +61,14 @@
     animation.fromValue = @(0);
     //结束值
     animation.toValue = @(1);
-    //起始值
+    //动画执行时间
     animation.duration = 1;
         
     return animation;
 }
 
 
-- (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-    NSLog(@"点击事件");
-}
+
 
 
 /*

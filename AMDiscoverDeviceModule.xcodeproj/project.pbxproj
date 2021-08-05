@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041FA14A26BB741B001B0020 /* AMBubbleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041FA14926BB741B001B0020 /* AMBubbleModel.m */; };
 		046D046626A8101400D9E7C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D046526A8101400D9E7C9 /* AppDelegate.m */; };
 		046D046926A8101400D9E7C9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D046826A8101400D9E7C9 /* SceneDelegate.m */; };
 		046D046C26A8101400D9E7C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D046B26A8101400D9E7C9 /* ViewController.m */; };
@@ -17,7 +18,6 @@
 		046D048126A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D048026A8101900D9E7C9 /* AMDiscoverDeviceModuleTests.m */; };
 		046D048C26A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D048B26A8101900D9E7C9 /* AMDiscoverDeviceModuleUITests.m */; };
 		046D04B026A8144A00D9E7C9 /* AMRippleAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D04AF26A8144A00D9E7C9 /* AMRippleAnimationView.m */; };
-		04A9579E26A83CC8007AFC27 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9579D26A83CC8007AFC27 /* BViewController.m */; };
 		04C6D8FF26A9407C001559A1 /* AMConnectBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6D8FE26A9407C001559A1 /* AMConnectBubbleView.m */; };
 		04C6D90C26A96D65001559A1 /* AMDiscoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6D90B26A96D65001559A1 /* AMDiscoverView.m */; };
 		04E63D6C26AFD37F00706377 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E63D6B26AFD37F00706377 /* UIView+Extension.m */; };
@@ -43,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041FA14826BB741B001B0020 /* AMBubbleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMBubbleModel.h; sourceTree = "<group>"; };
+		041FA14926BB741B001B0020 /* AMBubbleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMBubbleModel.m; sourceTree = "<group>"; };
 		046D046126A8101400D9E7C9 /* AMDiscoverDeviceModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMDiscoverDeviceModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046D046426A8101400D9E7C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		046D046526A8101400D9E7C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,8 +66,6 @@
 		046D04AE26A8144A00D9E7C9 /* AMRippleAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMRippleAnimationView.h; sourceTree = "<group>"; };
 		046D04AF26A8144A00D9E7C9 /* AMRippleAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMRippleAnimationView.m; sourceTree = "<group>"; };
 		04A288383EC223F20B4E58AF /* Pods-AMDiscoverDeviceModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMDiscoverDeviceModule.release.xcconfig"; path = "Target Support Files/Pods-AMDiscoverDeviceModule/Pods-AMDiscoverDeviceModule.release.xcconfig"; sourceTree = "<group>"; };
-		04A9579C26A83CC8007AFC27 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
-		04A9579D26A83CC8007AFC27 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
 		04C6D8FD26A9407C001559A1 /* AMConnectBubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMConnectBubbleView.h; sourceTree = "<group>"; };
 		04C6D8FE26A9407C001559A1 /* AMConnectBubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMConnectBubbleView.m; sourceTree = "<group>"; };
 		04C6D90326A949F7001559A1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = AMDiscoverDeviceModule/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
@@ -105,6 +105,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041FA15126BB75B3001B0020 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				04E63D6A26AFD37F00706377 /* UIView+Extension.h */,
+				04E63D6B26AFD37F00706377 /* UIView+Extension.m */,
+				04F171F526AA9D0000E76315 /* UIFont+WordSize.h */,
+				04F171F626AA9D0000E76315 /* UIFont+WordSize.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		046D045826A8101400D9E7C9 = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +141,7 @@
 		046D046326A8101400D9E7C9 /* AMDiscoverDeviceModule */ = {
 			isa = PBXGroup;
 			children = (
-				04E63D6A26AFD37F00706377 /* UIView+Extension.h */,
-				04E63D6B26AFD37F00706377 /* UIView+Extension.m */,
+				041FA15126BB75B3001B0020 /* Category */,
 				046D04A426A8111100D9E7C9 /* AnimationView */,
 				046D046426A8101400D9E7C9 /* AppDelegate.h */,
 				046D046526A8101400D9E7C9 /* AppDelegate.m */,
@@ -144,11 +154,7 @@
 				046D047226A8101800D9E7C9 /* LaunchScreen.storyboard */,
 				046D047526A8101800D9E7C9 /* Info.plist */,
 				046D047626A8101800D9E7C9 /* main.m */,
-				04A9579C26A83CC8007AFC27 /* BViewController.h */,
-				04A9579D26A83CC8007AFC27 /* BViewController.m */,
 				04C6D90326A949F7001559A1 /* PrefixHeader.pch */,
-				04F171F526AA9D0000E76315 /* UIFont+WordSize.h */,
-				04F171F626AA9D0000E76315 /* UIFont+WordSize.m */,
 			);
 			path = AMDiscoverDeviceModule;
 			sourceTree = "<group>";
@@ -180,6 +186,8 @@
 				04C6D8FE26A9407C001559A1 /* AMConnectBubbleView.m */,
 				04C6D90A26A96D65001559A1 /* AMDiscoverView.h */,
 				04C6D90B26A96D65001559A1 /* AMDiscoverView.m */,
+				041FA14826BB741B001B0020 /* AMBubbleModel.h */,
+				041FA14926BB741B001B0020 /* AMBubbleModel.m */,
 			);
 			path = AnimationView;
 			sourceTree = "<group>";
@@ -376,10 +384,10 @@
 			files = (
 				04E63D6C26AFD37F00706377 /* UIView+Extension.m in Sources */,
 				046D046C26A8101400D9E7C9 /* ViewController.m in Sources */,
-				04A9579E26A83CC8007AFC27 /* BViewController.m in Sources */,
 				04F171F726AA9D0000E76315 /* UIFont+WordSize.m in Sources */,
 				046D046626A8101400D9E7C9 /* AppDelegate.m in Sources */,
 				04C6D90C26A96D65001559A1 /* AMDiscoverView.m in Sources */,
+				041FA14A26BB741B001B0020 /* AMBubbleModel.m in Sources */,
 				046D047726A8101800D9E7C9 /* main.m in Sources */,
 				046D04B026A8144A00D9E7C9 /* AMRippleAnimationView.m in Sources */,
 				046D046926A8101400D9E7C9 /* SceneDelegate.m in Sources */,
